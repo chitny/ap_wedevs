@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: AP Wedevs
  * Plugin URI: https://github.com/chitny/ap_wedevs
@@ -95,11 +94,10 @@ function print_app_form_wedevs($wp_error, $completed, $email_sent)
         } else {
             echo 'We could not sent you a confirmation email. An unexpected error occurred.';
         }
-    
     }
 
     // style of the form, to put in a css file
-    
+
     echo '
             <style>
             div {
@@ -121,7 +119,6 @@ function print_app_form_wedevs($wp_error, $completed, $email_sent)
                 cursor: pointer;
                 width: 60%;
               }
-
               form {
                 width: 50%;
                 margin: 0 auto;
@@ -135,7 +132,6 @@ function print_app_form_wedevs($wp_error, $completed, $email_sent)
                 clear:right;
                 font-size:18;
               }
-
               
             </style>
         ';
@@ -146,11 +142,7 @@ function print_app_form_wedevs($wp_error, $completed, $email_sent)
             echo 'Error: ' . esc_html($error_message);
         }
     }
-    // print message if everything was ok
-    if ($completed) {
 
-    }
-    
     // print the form in the page!
     echo '
             
@@ -188,7 +180,6 @@ function print_app_form_wedevs($wp_error, $completed, $email_sent)
             <label for="postname">Post Name</label>
             <input type="text" name="postname" value="' . esc_attr($postname) . '" required>
             </div>
-
             <div>
             <label for="cvfile">CV File Upload</label>
             <input type="file" name="cvfile" value="' . (!empty($cvfile) ?
@@ -393,7 +384,7 @@ class wedevsListTable extends WP_List_Table
         return $columns;
     }
 
-     // Delete a entry record.
+    // Delete a entry record.
 
     public function delete_entry($id)
     {
@@ -509,7 +500,7 @@ class wedevsListTable extends WP_List_Table
         );
         return $actions;
     }
-    
+
     //As the name says, this function process the bulk action
     public function process_bulk_action()
     {
@@ -615,38 +606,29 @@ function wedevs_show_widget()
         <td width="25%">Time</td>
         <td>' . esc_html($results->time) . '</td>
         </tr>
-
         <td>First Name</td>
         <td>' . esc_html($results->firstname) . '</td>
         </tr>
-
         <td>Last Name</td>
         <td>' . esc_html($results->lastname) . '</td>
         </tr>
-
         <td>Present Address</td>
         <td>' . esc_html($results->presentaddress) . '</td>
         </tr>
-
         <td>Email</td>
         <td>' . esc_html($results->emailaddress) . '</td>
         </tr>
-
         <td>Mobile</td>
         <td>' . esc_html($results->mobile) . '</td>
         </tr>
-
         <td>Post Name</td>
         <td>' . esc_html($results->postname) . '</td>
         </tr>
-
         <td>CV file</td>
         <td>' . esc_html($results->cv) . '</td>
         </tr>
-
         </tbody>
         </table>
         <br>';
     }
 }
-?>
